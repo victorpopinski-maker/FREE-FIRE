@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedido Especial 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #fff;
+      margin-bottom: 30px;
+      padding: 0 20px;
+    }
+
+    .area {
+      position: relative;
+      width: 100%;
+      height: 300px;
+    }
+
+    button {
+      padding: 14px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #sim {
+      background-color: #ff3366;
+      color: white;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 40px;
+    }
+
+    #nao {
+      background-color: #555;
+      color: white;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Vais me trair com alguem rico? </h1>
+
+  <div class="area">
+    <button id="sim" onclick="aceitou()">Sim </button>
+    <button id="nao">Não </button>
+  </div>
+
+  <script>
+    const nao = document.getElementById("nao");
+
+    function fugir() {
+      const maxX = window.innerWidth - 120;
+      const maxY = 250;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      nao.style.left = x + "px";
+      nao.style.top = y + "px";
+    }
+
+    // Para PC
+    nao.addEventListener("mouseover", fugir);
+
+    // Para celular (toque)
+    nao.addEventListener("touchstart", fugir);
+
+    function aceitou() {
+      document.body.innerHTML = `
+        <h1> Sabia que ias dizer SIM! 😍</h1>
+        <p style="color:white;font-size:20px;">
+          Prometo respeitar isso, ficar comigo apenas vais ficar mais pobre.
+        </p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
